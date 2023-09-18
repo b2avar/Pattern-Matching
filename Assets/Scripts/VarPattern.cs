@@ -14,6 +14,5 @@ public class VarPattern : MonoBehaviour
             // ve bu blok içinde kullanılabilir
             Debug.Log($"obj is a string: {str}");
         }
-        
     }
 }
