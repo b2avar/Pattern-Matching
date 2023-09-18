@@ -7,12 +7,13 @@ public class VarPattern : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        var name = "John";
+        if (name is string str)
+        {
+            // obj bir string türündeyse, str değişkeni bu türe dönüştürülür
+            // ve bu blok içinde kullanılabilir
+            Debug.Log($"obj is a string: {str}");
+        }
         
     }
 }
