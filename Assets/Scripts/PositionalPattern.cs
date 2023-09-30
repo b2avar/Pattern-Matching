@@ -1,23 +1,30 @@
-using System;
+//Positional Pattern (Pozisyonel Desen): Bir nesnenin özelliklerine değil,
+//sırasına göre desen eşleştirmesi yapmak için kullanılır. Bu, özellikle
+//koleksiyonlar veya dizilerdeki verilere erişirken ve bu verileri belirli
+//bir sıraya göre işlerken kullanışlıdır.
+
 using UnityEngine;
 
-public class PositionalPattern : MonoBehaviour
+namespace PatternMatching
 {
-    private GameObject[] _pattern;
-
-    private void Awake()
+    public class PositionalPattern : MonoBehaviour
     {
-        _pattern = GameObject.FindGameObjectsWithTag("PositionalPattern");
-    }
+        private GameObject[] _pattern;
 
-    private void Start()
-    {
-        foreach (var obj in _pattern)
+        private void Awake()
         {
-            Debug.Log(_pattern.Length);
-            if (obj.transform.position is {x: > 0, y: > 0, z: > 0})
+            _pattern = GameObject.FindGameObjectsWithTag("PositionalPattern");
+        }
+
+        private void Start()
+        {
+            foreach (var obj in _pattern)
             {
-                Debug.Log($"{obj.name} has positive x and y and z coordinates");
+                Debug.Log(_pattern.Length);
+                if (obj.transform.position is { x: > 0, y: > 0, z: > 0 })
+                {
+                    Debug.Log($"{obj.name} has positive x and y and z coordinates");
+                }
             }
         }
     }

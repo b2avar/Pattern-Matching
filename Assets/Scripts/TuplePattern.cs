@@ -1,23 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+//Tuple Pattern (Demet Deseni): Bir demetin içindeki elemanlara
+//göre desen eşleştirmesi yapmak için kullanılır. Özellikle metotlar
+//veya fonksiyonlar birden fazla değer döndüğünde ve bu değerleri desenlere göre
+//işlemek istediğinizde kullanışlıdır.
+
 using UnityEngine;
 
-public class TuplePattern : MonoBehaviour
+namespace PatternMatching
 {
-    // Start is called before the first frame update
-    private void Start()
+    public class TuplePattern : MonoBehaviour
     {
-        GameObject obj = new GameObject("Cube");
+        // Start is called before the first frame update
+        private void Start()
+        {
+            GameObject obj = new GameObject("Cube");
 
-        SpriteRenderer renderer = obj.AddComponent<SpriteRenderer>();
-        renderer.color = Color.red;
+            SpriteRenderer renderer = obj.AddComponent<SpriteRenderer>();
+            renderer.color = Color.red;
         
-        var result = GetRandomNumber();
-        obj.transform.position = new Vector2(result.Item1, result.Item2);
-    }
+            var result = GetRandomNumber();
+            obj.transform.position = new Vector2(result.Item1, result.Item2);
+        }
     
-    private (int, int) GetRandomNumber()
-    {
-        return (Random.Range(-10, 10), Random.Range(0, 10));
+        private (int, int) GetRandomNumber()
+        {
+            return (Random.Range(-10, 10), Random.Range(0, 10));
+        }
     }
 }
+

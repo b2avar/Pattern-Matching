@@ -1,33 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//Type Pattern (Tür Deseni): Bir nesnenin belirli bir türe
+//uyup uymadığını kontrol etmek için kullanılır.
+//Bu, is ve as anahtar kelimeleriyle gerçekleştirilir.
+
 using UnityEngine;
 
-public class TypePattern : MonoBehaviour
+namespace PatternMatching
 {
-    private void Start()
+    public class TypePattern : MonoBehaviour
     {
-        GameObject obj = GameObject.Find("Cube");
-
-        if (obj != null)
+        private void Start()
         {
-            Debug.Log("This is a game object");
+            GameObject obj = GameObject.Find("Cube");
 
-            if (obj.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            if (obj != null)
             {
-                Debug.Log("This GameObject also contains a Rigidbody.");
-            }
+                Debug.Log("This is a game object");
+
+                if (obj.TryGetComponent<Rigidbody>(out Rigidbody rb))
+                {
+                    Debug.Log("This GameObject also contains a Rigidbody.");
+                }
             
-            else if (obj.TryGetComponent<MeshRenderer>(out MeshRenderer renderer))
+                else if (obj.TryGetComponent<MeshRenderer>(out MeshRenderer renderer))
+                {
+                    Debug.Log("This GameObject also contains a MeshRenderer.");
+                }
+            }
+
+            else
             {
-                Debug.Log("This GameObject also contains a MeshRenderer.");
+                Debug.Log("Could not find a GameObject named Cube.");
             }
         }
-
-        else
-        {
-            Debug.Log("Could not find a GameObject named Cube.");
-        }
-    }
-    
+    } 
 }
+
+

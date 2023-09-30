@@ -1,17 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//Property Pattern (Özellik Deseni): Bir nesnenin belirli bir özelliğinin değerine göre
+//desen eşleştirmesi yapmak için kullanılır. Bu, özellikle nesnelerin içerdiği özelliklere
+//dayalı kararlar vermek için kullanışlıdır.
+
 using UnityEngine;
 
-public class PropertyPattern : MonoBehaviour
+namespace PatternMatching
 {
-    private void Start()
+    public class PropertyPattern : MonoBehaviour
     {
-        var obj = GameObject.Find("Sphere");
-        var collider = obj.GetComponent<SphereCollider>();
+        private void Start()
+        {
+            var obj = GameObject.Find("Sphere");
+            var collider = obj.GetComponent<SphereCollider>();
 
-        Debug.Log(collider is SphereCollider { isTrigger: false, radius: 0.5f }
-            ? "This is a GameObject named Sphere."
-            : "Could not find a GameObject named Sphere.");
+            Debug.Log(collider is SphereCollider { isTrigger: false, radius: 0.5f }
+                ? "This is a GameObject named Sphere."
+                : "Could not find a GameObject named Sphere.");
+        }
     }
 }

@@ -1,24 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+//Constant Pattern (Sabit Deseni): Bir nesnenin belirli bir sabit değere eşit olup
+//olmadığını kontrol etmek için kullanılır.
+
 using UnityEngine;
 
-public class ConstantPattern : MonoBehaviour
+namespace PatternMatching
 {
-    private void Start()
+    public class ConstantPattern : MonoBehaviour
     {
-        var value = 0;
-        switch (value)
+        private void Start()
         {
-            case 0:
-                Debug.Log("value sıfıra eşittir.");
-                break;
-            case 1:
-                Debug.Log("value bir.");
-                break;
-            default:
-                Debug.Log("value diğer bir değere eşittir.");
-                break;
+            var value = 0;
+            switch (value)
+            {
+                case 0:
+                    Debug.Log("value sıfıra eşittir.");
+                    break;
+                case 1:
+                    Debug.Log("value bir.");
+                    break;
+                default:
+                    Debug.Log("value diğer bir değere eşittir.");
+                    break;
+            }
         }
     }
 }

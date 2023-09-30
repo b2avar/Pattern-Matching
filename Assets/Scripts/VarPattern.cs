@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+//Var Pattern (Değişken Deseni): Bir nesneyi bir değişkene atarken
+//veya bir deseni daha sonra kullanmak için saklarken kullanılır.
+
 using UnityEngine;
 
-public class VarPattern : MonoBehaviour
+namespace PatternMatching
 {
-    // Start is called before the first frame update
-    void Start()
+    public class VarPattern : MonoBehaviour
     {
-        var name = "John";
-        if (name is string str)
+        // Start is called before the first frame update
+        void Start()
         {
-            // obj bir string türündeyse, str değişkeni bu türe dönüştürülür
-            // ve bu blok içinde kullanılabilir
-            Debug.Log($"obj is a string: {str}");
+            var name = "John";
+            if (name is string)
+            {
+                // obj bir string türündeyse, str değişkeni bu türe dönüştürülür
+                // ve bu blok içinde kullanılabilir
+                Debug.Log($"obj is a string: {name}");
+            }
         }
     }
 }
+
+
